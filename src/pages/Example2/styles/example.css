@@ -1,0 +1,12 @@
+body{
+  background-color: darkturquoise;
+  p{
+     color: white;
+  }
+  button{
+    border-radius: 5px;
+  }
+  section{
+    display: flex;
+  }
+}

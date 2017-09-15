@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 const Immutable = require('immutable')
 import { List, Map , is, fromJS } from 'immutable'
 
+require('../styles/example.css')
 let time = 0
 const shallowEqualImmutable = (objA, objB) => {
     if (objA === objB || is(objA, objB)) {
@@ -97,10 +98,10 @@ class Example extends Component {
                 <p>
                     <button onClick={this.handleCountClick}>Add to count</button>
                 </p>
-                <p>
+                <section>
                     <button onClick={this.handleCountClickSameValue}>SetToSameCount</button>
                     <button onClick={this.handleChangeSchoolSameValue}>SetToSameSchool</button>
-                </p>
+                </section>
                 <p>
                     Count: {data.get('count')}
                 </p>

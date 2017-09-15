@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+require('../styles/example.css')
 const  shallowEqual =(objA, objB) =>{
     if (objA === objB) {
         return true;

@@ -2,6 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const precss       = require('precss');
+const autoprefixer = require('autoprefixer');
+const postassets = require('postcss-assets');
 module.exports = {
     devtool : 'eval-source-map',
     entry : [
@@ -26,6 +29,13 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: function () {
+                    return [precss, autoprefixer, postassets]
+                }
+            }
+        })
     ],
     module : {
         loaders : [
@@ -36,6 +46,10 @@ module.exports = {
                 query : {
                     "presets": ["react", "es2015", "stage-0"]
                 }
+            },
+            {
+                test:   /\.css$/,
+                loader: "style-loader?sourceMap!css-loader?modules&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader"
             }
         ]
     }
