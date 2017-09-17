@@ -12,7 +12,8 @@ const rootRoute = {
         component: require('./pages/Home/Home'),
         childRoutes : [
             require('./pages/Example'),
-            require('./pages/Example2')
+            require('./pages/Example2'),
+            require('./pages/Todo')
         ]
     } ]
 }
