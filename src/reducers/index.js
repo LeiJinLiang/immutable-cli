@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
-import {reducer }from '../pages/Todo/reducers'
-const rootReducer = combineReducers({
-    reducer
+import rootReducer from '../pages/Todo/reducers'
+
+
+const rootReducer1 = combineReducers({
+    rootReducer
 })
 
-export default rootReducer
+export default rootReducer1

@@ -3,8 +3,9 @@ import {TodoList} from '../components/Todo'
 import { addTodo, toggleTodo } from "../actions"
 
 const mapStateToProps = (state) => {
+    console.log('state',state)
     return (
-        { todos : state.reducer}
+        { todos : state.rootReducer.reducer}
     )
 }
 
