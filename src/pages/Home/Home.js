@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { cache , chunk} from "../../utils"
 import Silde from '../../components/Slide/Slide'
+require('./home.css')
 
 class Home extends Component{
     constructor(props){
@@ -21,6 +22,7 @@ class Home extends Component{
                 Home...
                 <Link to = 'demo1'>demo1</Link>
                 <Link to = 'demo2'>demo2</Link>
+                <Link to = 'demo3'>demo3</Link>
                 <Silde/>
 
 

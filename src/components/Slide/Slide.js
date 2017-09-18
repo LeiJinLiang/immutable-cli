@@ -18,8 +18,20 @@ class Silde extends Component {
 
     handleLine = (canvas, width, scaleH) => {
         const ctx = canvas.getContext('2d')
-        // baseLine
+        const  devicePixelRatio = window.devicePixelRatio || 1,
+            backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1,
+            ratio = devicePixelRatio / backingStoreRatio;
 
+        const oldWidth = canvas.width;
+        const oldHeight = canvas.height;
+        canvas.width = oldWidth * ratio;
+        canvas.height = oldHeight * ratio;
+        canvas.style.width = oldWidth + 'px';
+        canvas.style.height = oldHeight + 'px';
+
+
+        // baseLine
+        ctx.scale(ratio, ratio);
         ctx.beginPath()
         ctx.moveTo(0,scaleH)
         ctx.lineTo(width,scaleH)
