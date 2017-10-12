@@ -9,17 +9,17 @@ class NumAnimate extends Component{
     componentDidMount() {
         this.odometer = new Odometer({
             el: ReactDOM.findDOMNode(this),
-            value: 10,
+            value: 100,
             format: '(,ddd)',
         });
         let _this = this
         setTimeout(()=>{
-            _this.odometer.update(Math.random()*1000)
+            _this.odometer.update(Math.random()*10000)
         },0)
     }
 
     componentDidUpdate() {
-        this.odometer.update(Math.random()*1000)
+        this.odometer.update(Math.random()*10000)
     }
 
     render() {
