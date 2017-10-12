@@ -15,6 +15,7 @@
     "compression": "^1.7.0",
     "express": "^4.15.4",
     "immutable": "^3.8.1",
+    "odometer": "^0.4.8",
     "react": "^15.6.1",
     "react-css-modules": "^4.7.1",
     "react-dom": "^15.6.1",

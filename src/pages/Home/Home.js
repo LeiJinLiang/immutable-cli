@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { cache , chunk} from "../../utils"
 import Silde from '../../components/Slide/Slide'
+import NumAnimate from '../../components/NumAnimate/NumAnimate'
 require('./home.css')
 
 class Home extends Component{
@@ -23,9 +24,8 @@ class Home extends Component{
                 <Link to = 'demo1'>demo1</Link>
                 <Link to = 'demo2'>demo2</Link>
                 <Link to = 'demo3'>demo3</Link>
-                <Silde/>
 
-
+                <div> <NumAnimate/></div>
                 {this.props.children}
             </div>
         )
@@ -33,3 +33,6 @@ class Home extends Component{
 }
 
 module.exports = Home
+
+
+// <Silde/>
